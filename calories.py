@@ -18,7 +18,11 @@ def print_calories(reference_name, values_name):
 
     result = pd.DataFrame()
     for name in values.index:
-        row = reference.loc[name] * values.loc[name].mass / 100.0
+        if name in reference.index:
+            row = reference.loc[name] * values.loc[name].mass / 100.0
+        else:
+            row = pd.DataFrame([[0.0] * len(COLUMNS)],
+                               [name], COLUMNS)
         row['mass'] = values.loc[name].mass
         result = result.append(row)
 
