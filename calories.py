@@ -2,7 +2,7 @@ import sys
 import pandas as pd
 
 
-COLUMNS = ['mass', 'fat', 'prot', 'carb', 'energy']
+COLUMNS = ['mass', 'fat', 'prot', 'carb', 'calories']
 
 
 def main(reference_name, values_name):
@@ -12,8 +12,8 @@ def main(reference_name, values_name):
 
 def print_calories(reference_name, values_name):
     print(reference_name, values_name)
-    reference = pd.read_csv(reference_name, index_col='name')
-    values = pd.read_csv(values_name, index_col='name')
+    reference = pd.read_csv(reference_name, index_col='name', comment='#')
+    values = pd.read_csv(values_name, index_col='name', comment='#')
     values = values.groupby(level=0).sum()
 
     result = pd.DataFrame()
