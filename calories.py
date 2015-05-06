@@ -3,7 +3,7 @@ import pandas as pd
 
 
 #: All known columns
-COLUMNS = ['mass', 'fat', 'prot', 'carb', 'cal']
+COLUMNS = ['mass', 'fat', 'prot', 'carb', 'cal', 'cost']
 
 #: Columns that are used to calculate total_% column
 TOTAL = ['fat', 'prot', 'carb']
