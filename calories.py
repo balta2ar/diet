@@ -11,6 +11,7 @@ TOTAL = ['fat', 'prot', 'carb']
 
 def main(reference_name, values_name):
     pd.set_option('precision', 2)
+    pd.set_option('display.float_format', lambda x: '%.2f' % x)
     for values_name in values_names:
         print_calories(reference_name, values_name)
 
